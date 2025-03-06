@@ -294,7 +294,7 @@ impl Qp {
             attr.max_rd_atomic = 16;
             attr.timeout = 14;
             attr.retry_cnt = 6;
-            attr.rnr_retry = 6;
+            attr.rnr_retry = 7;
             attr_mask |= ibv_qp_attr_mask::IBV_QP_MAX_QP_RD_ATOMIC
                 | ibv_qp_attr_mask::IBV_QP_TIMEOUT
                 | ibv_qp_attr_mask::IBV_QP_RETRY_CNT
