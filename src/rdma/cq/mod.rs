@@ -181,7 +181,7 @@ impl Cq {
         let mut wc = <Vec<Wc>>::with_capacity(num as usize);
 
         // SAFETY: FFI, and that `Wc` is transparent over `ibv_wc`.
-        let num = unsafe { ibv_poll_cq(self.as_raw(), wc.len() as i32, wc.as_mut_ptr().cast()) };
+        let num = unsafe { ibv_poll_cq(self.as_raw(), num as i32, wc.as_mut_ptr().cast()) };
         if num >= 0 {
             unsafe { wc.set_len(num as usize) };
             Ok(wc)
